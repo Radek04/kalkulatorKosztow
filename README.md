@@ -1,1 +1,1 @@
-# kalkulatorKosztow
+# Kalkulator kosztów wynajmu samochodu
