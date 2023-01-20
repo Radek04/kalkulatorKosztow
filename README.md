@@ -1,9 +1,9 @@
 # Kalkulator kosztów wynajmu samochodu
 
-<p>Jest to zadanie wprowadzające w którym za zadnienie miałem stworzyć kalkulator kosztów wynjmu samochodu. </p>
+<p>Jest to zadanie wprowadzające w którym miałem stworzyć kalkulator kosztów wynajmu samochodu. Kalkulator oblicza koszt wynajamu samochodu na podstawie danych podanych przez użytkowanika. </p>
 </br>
 
-<p>Zastosowane technologie:</p>
+<p>Całość została stworzona z użyciem taki technologii jak:</p>
 
 <ol>
 <li>HTML</li>
