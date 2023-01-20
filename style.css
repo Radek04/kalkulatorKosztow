@@ -15,19 +15,20 @@ nav{
     color: white;
     width: 100%;
     padding: 20px 0;
-    
 }
 .navImage{
     float: left;
     justify-content: center;
     align-items: center;
 }
+.navList{
+display: flex;
+}
 ul
 {
     list-style-type: none;
     float: left;
-    justify-content: center;
-    align-items: center;
+    display: flex;
 }
 li
 {
@@ -62,4 +63,16 @@ h3
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
+}
+.distance{
+    width: auto;
+}
+.pickedDistance{
+    display: inline;
+}
+input{
+    height: 70%;
+}
+.error{
+    color: red;
 }
