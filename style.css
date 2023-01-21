@@ -11,6 +11,7 @@ main
 nav{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     background-color: black;
     color: white;
     width: 100%;
@@ -29,6 +30,7 @@ ul
     list-style-type: none;
     float: left;
     display: flex;
+    margin-top: 16px;
 }
 li
 {
@@ -51,7 +53,8 @@ section article
 }
 .content{
     width: 800px;
-    height: 600px;
+    min-height: 600px;
+    max-height: max-content;
     justify-content: center;
     align-items: center;
     background-color: rgb(220, 220, 220);
@@ -75,4 +78,27 @@ input{
 }
 .error{
     color: red;
+}
+@media only screen and (max-width:768px)
+{
+    .navImage{
+        text-align: center;
+    }
+    .navList
+    {
+        box-shadow: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .navList ul
+    {
+        padding-left: 0;
+    }
+    .navList ul li{
+        font-size: 2em;
+    }
+    span {
+        justify-content: center
+    };
 }

@@ -14,7 +14,7 @@ const driv5 = 1.2;
 const model3 = 1.15;
 const tax = 1.23;
 const mili = 86400000;
-let i = 0;
+let stat = 0;
 
 const priceCategory = {
   basic: 1,
@@ -32,7 +32,7 @@ const cars = {
   Mercedes: {
     id: 1,
     priceCategories: "medium",
-    number: 4,
+    number: 2,
     combustion: 15,
   },
   BMW: {
@@ -50,7 +50,7 @@ const cars = {
   Hyundai: {
     id: 4,
     priceCategories: "basic",
-    number: 10,
+    number: 2,
     combustion: 7,
   },
   Porsche: {
@@ -62,13 +62,12 @@ const cars = {
 };
 
 const main = () => {
-  console.log(i);
   error.textContent = "";
-  dateError();
-  licence();
-  distanceZero();
-  if (error.textContent != "") {
-  } else {
+  const dE = dateError();
+  const l = licence();
+  const dZ = distanceZero();
+  if (dE && l && dZ) {
+    result.style.display = "block";
     const { netto, brutto, costFuel, diffrentTime } = calculate();
     const arr = Array.from(document.getElementsByClassName("addList"));
     document.getElementsByClassName(
@@ -85,6 +84,8 @@ const main = () => {
     arr[0].children[2].textContent = `Cena samego wypożecznia: ${Math.round(
       priceForDay * diffrentTime
     )}`;
+  } else {
+    result.style.display = "none";
   }
 };
 function calculate() {
@@ -104,7 +105,8 @@ function calculate() {
   results *= priceCategory[cars[car].priceCategories];
 
   if (time.getFullYear() - lic < 3 && cars[car].priceCategories === "premium") {
-    result.textContent = "Nie możesz wypożyczyć tego samochodu";
+    error.textContent = "Nie możesz wypożyczyć tego samochodu";
+    result.style.display = "none";
   } else if (time.getFullYear() - lic < 5) {
     results *= driv5;
   }
@@ -121,6 +123,9 @@ function calculate() {
 const distanceZero = () => {
   if (distance.value == 0) {
     error.textContent = "Wartość przejechanych kilometrów nie może być zerem!";
+    return false;
+  } else {
+    return true;
   }
 };
 const distanceValue = () => {
@@ -130,6 +135,9 @@ const licence = () => {
   const lic = dataReceived.value;
   if (lic > time.getFullYear() || lic == "") {
     error.textContent = "Wpisz poprawny rok otrzymania prawa jazdy!";
+    return false;
+  } else {
+    return true;
   }
 };
 const date = () => {
@@ -142,6 +150,9 @@ const date = () => {
 const dateError = () => {
   if (dataReceipt.value == "" || dataReturn.value == "") {
     error.textContent = "Musisz podać datę!";
+    return false;
+  } else {
+    return true;
   }
 };
 

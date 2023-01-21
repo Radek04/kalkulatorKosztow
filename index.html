@@ -25,16 +25,16 @@
   <body>
     <main>
       <nav class="nav">
-        <div class="navImage col-lg-3 col-12 ">
-          <img src="logo.png" alt="Logo firmy" class="img-fluid"/>
+        <div class="navImage col-lg-3 col-md-2 col-12 text-center">
+          <img src="logo.png" alt="Logo firmy" class="img-fluid" />
         </div>
-        <div class="navList col-lg-8 col-12 ">
-          <ul>
-            <li class="col-lg-2 col-12">Home</li>
-            <li class="col-lg-2 col-12">Search</li>
-            <li class="col-lg-2 col-12">Listing</li>
-            <li class="col-lg-2 col-12">Pages</li>
-            <li class="col-lg-2 col-12">More</li>
+        <div class="navList col-lg-9 col-md-10 col-12">
+          <ul class="d-lg-inline-block d-block">
+            <li class="col-lg-2 col-md-2 col-12">Home</li>
+            <li class="col-lg-2 col-md-2 col-12">Search</li>
+            <li class="col-lg-2 col-md-2 col-12">Listing</li>
+            <li class="col-lg-2 col-md-2 col-12">Pages</li>
+            <li class="col-lg-2 col-md-2 col-12">More</li>
           </ul>
         </div>
       </nav>
@@ -46,25 +46,27 @@
             <div
               class="container row d-flex justify-content-center d-flex justify-content-center"
             >
-              <label for="distance" class="form-label col-6"
+              <label for="distance" class="form-label col-md-6 col-12"
                 >Szacowana ilość przejechanych kilometrow:
               </label>
-              0
-              <input
-                type="range"
-                id="distance"
-                class="distance form-range col-5"
-                min="0"
-                max="500"
-                value="250"
-              />500
-              <p class="pickedDistance col-1">(250)</p>
+              <span class="col-md-6 col-11 d-flex">
+                0
+                <input
+                  type="range"
+                  id="distance"
+                  class="distance form-range col-5"
+                  min="0"
+                  max="500"
+                  value="250"
+                />500
+                <p class="pickedDistance col-1">(250)</p>
+              </span>
             </div>
             <div class="container row">
               <label for="dataReceived" class="form-label col-6"
                 >Podaj rok otrzymania prawa jazdy:</label
               >
-              <input type="text" id="dataReceived" class="dataReceived col-6"/>
+              <input type="text" id="dataReceived" class="dataReceived col-6" />
             </div>
             <div class="container row d-flex justify-content-center">
               <label for="dataReceipt" class="form-label col-6"
@@ -95,7 +97,8 @@
             <button class="button btn btn-info">Szukaj</button>
 
             <p class="error"></p>
-            <p class="result">
+
+            <div class="result">
               <h4 class="brutto"></h4>
               <h4 class="netto"></h4>
               <h4 class="addition"></h4>
@@ -104,7 +107,7 @@
                 <li></li>
                 <li></li>
               </ol>
-            </p>
+            </div>
           </div>
         </article>
       </section>
